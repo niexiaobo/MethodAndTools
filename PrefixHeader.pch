@@ -1,0 +1,53 @@
+//
+//  PrefixHeader.pch
+//  MethodAndTools
+//
+//  Created by 博彦科技-聂小波 on 16/6/13.
+//  Copyright © 2016年 bobo. All rights reserved.
+//
+#import <Availability.h>
+#import "BFKit.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Foundation/NSObject.h>
+#import "Reachability.h"
+
+
+#ifndef __IPHONE_8_0
+#warning "This project uses features only available in iOS SDK 8.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Foundation/NSObject.h>
+#endif
+
+
+
+#ifdef DEBUG
+#define LOG(...) NSLog(__VA_ARGS__);
+#define LOG_METHOD NSLog(@"%s", __func__);
+#else
+#define LOG(...);
+#define LOG_METHOD;
+#endif
+
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define Screen_height  [[UIScreen mainScreen] bounds].size.height
+#define Screen_width  [[UIScreen mainScreen] bounds].size.width
+#define ScreenBounds   [[UIScreen mainScreen] bounds]
+
+#define ApplicationDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+
+
+
+
+#endif /* PrefixHeader_pch */
